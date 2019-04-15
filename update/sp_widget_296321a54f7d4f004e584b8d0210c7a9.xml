@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_widget">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category/>
         <client_script><![CDATA[function($rootScope,$scope,spUtil) {
@@ -37,7 +36,6 @@
 	$rootScope.$on('deleteNote', function(event,data) {
 		c.data.notes.splice($scope.notePos, 1);
 	});
-
 	// Record removed from data object on the client and passed to server
 	c.snNoteUpdate = function(name,sysID){
 
@@ -67,25 +65,24 @@
 		});
 
 	}
-
-	spUtil.recordWatch($scope, "x_snc_createnotes_note", "numberANYTHING", function(name) {
+	spUtil.recordWatch($scope, "x_snc_createnotes_note", "numberISNOTEMPTY", function(name) {
 		console.log(name.data.operation); 
 		console.log(name); 
-		// Calls a Client Script function to do the update and pass the updated data object
-		// to the server.
-		if(name.data.operation == "update"){
-			c.snNoteUpdate(name, name.data.sys_id);
-		}
-		// Calls a Client Script function which does the update on the server and passes
-		// the updated data object back to the client.
-		if(name.data.operation == "delete"){
-			c.snNoteDelete(name.data.sys_id);
-		}
-		// Fast and easy... replace the client data object with the server data object
-		if(name.data.operation == "insert"){
-			c.server.refresh();
-		}
 	});
+	// Calls a Client Script function to do the update and pass the updated data object
+	// to the server.
+	if(name.data.operation == "update"){
+		c.snNoteUpdate(name, name.data.sys_id);
+	}
+	// Calls a Client Script function which does the update on the server and passes
+	// the updated data object back to the client.
+	if(name.data.operation == "delete"){
+		c.snNoteDelete(name.data.sys_id);
+	}
+	// Fast and easy... replace the client data object with the server data object
+	if(name.data.operation == "insert"){
+		c.server.refresh();
+	}
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -103,7 +100,7 @@
         <internal>false</internal>
         <link/>
         <name>Notes List</name>
-        <option_schema>[{"hint":"Specify a title for the Notes List widget","name":"title","default_value":"Notes","label":"Title","type":"string"},{"hint":"Select the maximum number of records to display","name":"maximum_records_to_display","default_value":"5","label":"Maximum records to display","type":"choice","choices":[{"label":"2","value":"2"},{"label":"3","value":"3"},{"label":"5","value":"5"},{"label":"7","value":"7"},{"label":"11","value":"11"},{"label":"13","value":"13"},{"label":"17","value":"17"}]}]</option_schema>
+        <option_schema>[{"hint":"Specify a title for the Notes List widget","name":"title","section":"other","default_value":"Notes","label":"Title","type":"string"},{"hint":"Select the maximum number of records to display","name":"maximum_records_to_display","section":"other","default_value":"5","label":"Maximum records to display","type":"choice","choices":[{"label":"2","value":"2"},{"label":"3","value":"3"},{"label":"5","value":"5"},{"label":"7","value":"7"},{"label":"11","value":"11"},{"label":"13","value":"13"},{"label":"17","value":"17"}]}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -132,9 +129,7 @@
 			data.noteID = id;
 			data.newNote = {};
 			$sp.getRecordValues(data.newNote,newNote,"title,note,sys_id");
-
 		}
-
 		if (input.action == 'snDeleteNote') {
 			var delNote = new GlideRecord('x_snc_createnotes_note');
 			// The notes record should already be gone.  Just
@@ -144,29 +139,27 @@
 			}
 
 		}
-
 	}
 }
-)();
-
-]]></script>
+)();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-10-14 01:08:53</sys_created_on>
         <sys_id>296321a54f7d4f004e584b8d0210c7a9</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Notes List</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_296321a54f7d4f004e584b8d0210c7a9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-02-06 17:38:28</sys_updated_on>
+        <sys_updated_on>2019-04-12 17:17:51</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
   <div class="panel-heading clearfix">
     <h3 class="panel-title pull-left">
       {{::c.options.title}}
+      ${Notes}
     </h3>
     <button class="btn btn-default pull-right" ng-click="c.newNote()"> 
       <span class="glyphicon glyphicon-plus"></span> 

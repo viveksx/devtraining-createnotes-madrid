@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Request Aure Server">bccf02ca1b303300a1352136ec4bcbc3</catalog_item>
+        <catalog_variable>IO:2819e2ca1bb03300a1352136ec4bcb7c</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>true</mandatory>
+        <order>200</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-15 15:06:48</sys_created_on>
+        <sys_id>6e6a224e1bb03300a1352136ec4bcb4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>additional_details_request</sys_name>
+        <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_6e6a224e1bb03300a1352136ec4bcb4e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-15 15:06:48</sys_updated_on>
+        <table/>
+        <ui_policy display_value="If it is directly by requestor">8b1ae68a1bb03300a1352136ec4bcb9d</ui_policy>
+        <variable>additional_details_request</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

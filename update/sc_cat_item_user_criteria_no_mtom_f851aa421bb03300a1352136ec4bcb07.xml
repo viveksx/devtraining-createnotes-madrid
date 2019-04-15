@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_no_mtom">
+    <sc_cat_item_user_criteria_no_mtom action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Request Aure Server">bccf02ca1b303300a1352136ec4bcbc3</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_no_mtom</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-15 14:27:05</sys_created_on>
+        <sys_id>f851aa421bb03300a1352136ec4bcb07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request Aure Server.SNC External</sys_name>
+        <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_no_mtom_f851aa421bb03300a1352136ec4bcb07</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-15 14:27:05</sys_updated_on>
+        <user_criteria display_value="SNC External">81f7a34b2faf2300b612c886f699b638</user_criteria>
+    </sc_cat_item_user_criteria_no_mtom>
+</record_update>
